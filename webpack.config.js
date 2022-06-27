@@ -16,7 +16,7 @@ module.exports = (env, argv) => {
     },
     entry: {
       // Bundle root with name `app.js`.
-      app: path.resolve(__dirname, "index.ts")
+      app: path.resolve(__dirname, "index.js")
     },
     output: {
       // You can change it to e.g. `/ui/`, but also edit `historyApiFallback` below and `<base href..`> in `index.hbs`.

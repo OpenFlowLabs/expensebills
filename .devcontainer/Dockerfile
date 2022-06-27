@@ -7,3 +7,10 @@ FROM mcr.microsoft.com/vscode/devcontainers/rust:0-${VARIANT}
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
    && apt-get -y install clang lld \
    && apt-get autoremove -y && apt-get clean -y
+
+RUN rustup target add wasm32-unknown-unknown
+RUN cargo install wasm-pack
+RUN cargo install cargo-make
+RUN rustup toolchain install nightly \
+   && rustup component add rustfmt --toolchain nightly
+RUN npx browserslist@latest --update-db

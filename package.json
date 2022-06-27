@@ -1,9 +1,9 @@
 {
-  "author": "Martin Kavík <martin@kavik.cz>",
-  "name": "seed-quickstart-webpack",
-  "version": "0.7.6",
-  "repository": "https://github.com/MartinKavik/seed-quickstart-webpack",
-  "license": "MIT",
+  "author": "Till Wegmueller <till.wegmueller@openflowlabs.com>",
+  "name": "expensebills",
+  "version": "0.1.0",
+  "repository": "https://github.com/OpenFlowLabs/expensebills.git",
+  "license": "MPL V2.0",
   "scripts": {
     "start": "yarn generate:css_classes && webpack serve --config webpack.config.js --mode=development",
     "start:release": "yarn generate:css_classes && webpack serve --config webpack.config.js --mode=production",
