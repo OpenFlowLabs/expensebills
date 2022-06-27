@@ -148,7 +148,7 @@ pub fn update(msg: Msg, model: &mut Model, _: &mut impl Orders<Msg>) {
                 position = document()
                     .document_element()
                     .expect("get document element")
-                    .scroll_top()
+                    .scroll_top();
             }
             *model.scroll_history.push_back() = position;
         },
