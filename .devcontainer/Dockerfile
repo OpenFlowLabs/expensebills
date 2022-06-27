@@ -13,4 +13,4 @@ RUN cargo install wasm-pack
 RUN cargo install cargo-make
 RUN rustup toolchain install nightly \
    && rustup component add rustfmt --toolchain nightly
-RUN npx browserslist@latest --update-db
+#RUN npx browserslist@latest --update-db
