@@ -8,6 +8,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
    && apt-get -y install clang lld \
    && apt-get autoremove -y && apt-get clean -y
 
+USER vscode
+
 RUN rustup target add wasm32-unknown-unknown
 RUN cargo install --locked trunk
 RUN cargo install cargo-make
