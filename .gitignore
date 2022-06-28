@@ -10,3 +10,4 @@ src/generated/**
 !src/generated/mod.rs
 !**/.keep
 css_classes.rs
+tailwind.css

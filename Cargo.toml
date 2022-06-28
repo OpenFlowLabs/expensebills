@@ -11,6 +11,10 @@ edition = "2018"
 [dependencies]
 # you can check the latest version here: https://crates.io/crates/yew
 yew = "0.19"
+ulid = {version = "0.6.0", features=["serde"] }
+
+[dependencies.getrandom]
+features = ["js"]
 
 [profile.release]
 lto = true
