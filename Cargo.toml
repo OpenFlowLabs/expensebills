@@ -15,7 +15,7 @@ crate-type = ["cdylib"]
 wasm-bindgen-test = "0.3.18"
 
 [dependencies]
-seed = "0.9.1"
+seed = "0.7.0"
 fixed-vec-deque = "0.1.9"
 
 [dependencies.web-sys]

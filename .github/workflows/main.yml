@@ -26,18 +26,6 @@ jobs:
           profile: minimal
           toolchain: stable
 
-      - name: Install cargo-make
-        uses: davidB/rust-cargo-make@v1
-
-      - name: Install Node dependencies
-        run: yarn
-
-      - name: Build & prerender
-        run: yarn build:prerender
-
-      - name: Run tests
-        run: cargo make verify_only
-
       - name: Install Netlify CLI
         if: github.ref == 'refs/heads/master'
         run: sudo npm install --unsafe-perm=true netlify-cli -g
