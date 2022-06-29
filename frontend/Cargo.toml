@@ -6,7 +6,7 @@ description = "The Application to manage my expense bills"
 categories = ["wasm", "rust", "tailwindcss", "seed", "personal", "website"]
 license = "MIT"
 readme = "./README.md"
-edition = "2018"
+edition = "2021"
 
 [dependencies]
 # you can check the latest version here: https://crates.io/crates/yew
