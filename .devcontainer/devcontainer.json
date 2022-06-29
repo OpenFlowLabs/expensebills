@@ -24,11 +24,13 @@
 			"extensions": [
 				"vadimcn.vscode-lldb",
 				"mutantdino.resourcemonitor",
-				"matklad.rust-analyzer",
 				"tamasfe.even-better-toml",
 				"serayuzgur.crates",
 				"zxh404.vscode-proto3",
-				"redhat.vscode-yaml"
+				"redhat.vscode-yaml",
+				"rust-lang.rust-analyzer",
+				"Swellaby.vscode-rust-test-adapter",
+				"ms-vscode.makefile-tools"
 			]
 		}
 	},

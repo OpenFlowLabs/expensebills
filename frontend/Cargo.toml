@@ -1,0 +1,29 @@
+[package]
+version = "0.1.0"
+name = "expensebills"
+repository = "https://github.com/OpenFlowLabs/expensebills.git"
+description = "The Application to manage my expense bills"
+categories = ["wasm", "rust", "tailwindcss", "seed", "personal", "website"]
+license = "MIT"
+readme = "./README.md"
+edition = "2018"
+
+[dependencies]
+# you can check the latest version here: https://crates.io/crates/yew
+yew = "0.19"
+ulid = {version = "0.6.0", features=["serde"] }
+anyhow = "1"
+thiserror = "1"
+yew-hooks ={ version = "*"}
+reqwest = {version = "*", features = ["json"]}
+serde ={ version = "*"}
+serde_json ={ version = "*"}
+wasm-logger ={ version = "*"}
+log ={ version = "*"}
+
+[dependencies.getrandom]
+version = "*"
+features = ["js"]
+
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = ['-Os']

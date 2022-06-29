@@ -5,12 +5,12 @@ FROM mcr.microsoft.com/vscode/devcontainers/rust:0-${VARIANT}
 # Include lld linker to improve build times either by using environment variable
 # RUSTFLAGS="-C link-arg=-fuse-ld=lld" or with Cargo's configuration file (i.e see .cargo/config.toml).
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-   && apt-get -y install clang lld \
+   && apt-get -y install clang lld cmake \
    && apt-get autoremove -y && apt-get clean -y
 
 USER vscode
 
-RUN yarn global add tailwindcss
+#RUN yarn global add tailwindcss
 RUN rustup target add wasm32-unknown-unknown
 RUN cargo install --locked trunk
 RUN cargo install cargo-make

@@ -1,0 +1,15 @@
+[package]
+name = "backend"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1"
+thiserror = "1"
+ulid = {version = "0.6.0", features=["serde"] }
+rocket = {version="0.5.0-rc.2", features = ["json"]}
+schemars = "0.8.10"
+okapi = { version = "0.7.0-rc.1" }
+rocket_okapi = { version = "0.8.0-rc.2", features = ["swagger"] }
