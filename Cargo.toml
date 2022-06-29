@@ -1,6 +1,7 @@
 workspace.members = [
     "backend",
-    "frontend"
+    "frontend",
+    "models"
 ]
 
 [profile.release]

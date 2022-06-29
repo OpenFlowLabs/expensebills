@@ -1,11 +1,11 @@
 mod errors;
 
-use reqwest::{Method};
-use yew::prelude::*;
-use yew_hooks::{use_async};
 use errors::Error;
+use log::info;
+use reqwest::Method;
 use serde::{de::DeserializeOwned, Deserialize, Serialize};
-use log::{info};
+use yew::prelude::*;
+use yew_hooks::use_async;
 
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq)]
 struct Greeting {
@@ -24,8 +24,8 @@ where
     }?;
     info!("{:?}", url);
     let client = reqwest::Client::new();
-    let request = client.request(Method::GET, url)
-        .header("Accept", "application/json");
+    let request =
+        client.request(Method::GET, url).header("Accept", "application/json");
     info!("{:?}", &request);
     let response = request.send().await;
     info!("{:?}", &response);
@@ -44,9 +44,7 @@ async fn fetch_greeting(name: String) -> Result<Greeting, Error> {
 
 #[function_component(Greeter)]
 fn greeter() -> Html {
-    let state = use_async(async move { 
-        fetch_greeting("Yew".into()).await 
-    });
+    let state = use_async(async move { fetch_greeting("Yew".into()).await });
 
     let onclick = {
         let state = state.clone();
