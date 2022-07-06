@@ -15,11 +15,20 @@ ulid = {version = "0.6.0", features=["serde"] }
 anyhow = "1"
 thiserror = "1"
 yew-hooks ={ version = "*"}
-reqwest = {version = "*", features = ["json"]}
+reqwest = {version = "*", features = ["json", "multipart"]}
 serde ={ version = "*"}
 serde_json ={ version = "*"}
 wasm-logger ={ version = "*"}
 log ={ version = "*"}
+web-sys={version = "*"}
+js-sys={version = "*"}
+strum = { version = "0.24", features = ["derive"] }
+gloo-utils = {version = "*"}
+chrono = {version = "*", features = ["serde"]}
+gloo-file = { version="0.2", features = ["futures"]}
+wasm-bindgen-futures = {version = "*"}
+wasm-bindgen = {version = "*"}
+
 
 [dependencies.getrandom]
 version = "*"

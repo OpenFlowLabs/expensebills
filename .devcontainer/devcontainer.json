@@ -30,7 +30,8 @@
 				"redhat.vscode-yaml",
 				"rust-lang.rust-analyzer",
 				"Swellaby.vscode-rust-test-adapter",
-				"ms-vscode.makefile-tools"
+				"ms-vscode.makefile-tools",
+				"bradlc.vscode-tailwindcss"
 			]
 		}
 	},

@@ -6,4 +6,6 @@ pub enum Error {
     RequestError(String),
     #[error("error deserializing object {0}")]
     DeserializeError(String),
+    #[error("{0}")]
+    FrontendError(String)
 }
