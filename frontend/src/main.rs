@@ -112,8 +112,6 @@ async fn upload_file(file: reqwest::multipart::Form) -> Result<Receipt, Error> {
 
 #[function_component(Greeter)]
 fn greeter() -> Html {
-    let state = use_state(|| false);
-
     let input_ref = use_node_ref();
 
     let upload_handler = { 

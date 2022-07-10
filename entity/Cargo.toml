@@ -1,0 +1,22 @@
+[package]
+name = "entity"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[lib]
+name = "entity"
+path = "src/lib.rs"
+
+[dependencies]
+thiserror = {version = "*"}
+uuid ={ version = "*", features = ["serde"]}
+serde ={ version = "*"}
+rocket = { version = "0.5.0-rc.1", features = [
+  "json",
+] }
+log = {version = "*"}
+chrono = {version = "*", features = ["serde"]}
+
+[dependencies.sea-orm]
+version = "^0.8.0"

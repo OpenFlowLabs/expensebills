@@ -1,0 +1,10 @@
+[default]
+temp_dir = "sample_data/tempdir"
+
+[default.limits]
+form = "50 MiB"
+json = "1 MiB"
+file = "50 MiB"
+
+[default.databases.sea_orm]
+url = "postgres://vscode:vscode@db/receipts_develop"

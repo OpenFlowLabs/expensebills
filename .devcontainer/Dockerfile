@@ -16,3 +16,4 @@ RUN cargo install --locked trunk
 RUN cargo install cargo-make
 RUN rustup toolchain install nightly \
    && rustup component add rustfmt --toolchain nightly
+RUN cargo install sqlx-cli --no-default-features --features native-tls,postgres
