@@ -32,7 +32,7 @@ fn rocket() -> _ {
     
     rocket.attach(SQLDb::init())
         .attach(AdHoc::config::<Config>())
-        .attach(cors::CORS)
+        .attach(cors::Cors)
         .manage(SledDB{
             files_db: db,
         })
