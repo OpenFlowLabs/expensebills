@@ -1,10 +1,12 @@
+use chrono::NaiveDate;
 use rocket::serde::{Deserialize, Serialize};
 use sea_orm::entity::prelude::*;
-use chrono::NaiveDate;
-use uuid::Uuid;
 use thiserror::Error;
+use uuid::Uuid;
 
-#[derive(Clone, Debug, PartialEq, DeriveEntityModel, Deserialize, Serialize)]
+#[derive(
+    Clone, Debug, PartialEq, DeriveEntityModel, Deserialize, Serialize,
+)]
 #[serde(crate = "rocket::serde")]
 #[sea_orm(table_name = "receipts")]
 pub struct Model {
@@ -14,25 +16,27 @@ pub struct Model {
     pub state: ReceiptState,
     pub file_hash: String,
     pub category: Option<String>,
-    pub payment_date: Option<NaiveDate>
+    pub payment_date: Option<NaiveDate>,
 }
 
-#[derive(Clone, Debug, PartialEq, Deserialize, Serialize, EnumIter, DeriveActiveEnum)]
+#[derive(
+    Clone, Debug, PartialEq, Deserialize, Serialize, EnumIter, DeriveActiveEnum,
+)]
 #[serde(crate = "rocket::serde")]
-#[sea_orm(rs_type="String", db_type="Enum", enum_name="receipt_state")]
+#[sea_orm(rs_type = "String", db_type = "Enum", enum_name = "receipt_state")]
 pub enum ReceiptState {
-    #[sea_orm(string_value = "Inbox")]
+    #[sea_orm(string_value = "inbox")]
     Inbox,
-    #[sea_orm(string_value = "Valid")]
+    #[sea_orm(string_value = "valid")]
     Valid,
-    #[sea_orm(string_value = "Payed")]
+    #[sea_orm(string_value = "payed")]
     Payed,
-    #[sea_orm(string_value = "Declined")]
+    #[sea_orm(string_value = "declined")]
     Declined,
-    #[sea_orm(string_value = "Process")]
+    #[sea_orm(string_value = "process")]
     Process,
-    #[sea_orm(string_value = "Done")]
-    Done
+    #[sea_orm(string_value = "done")]
+    Done,
 }
 
 impl std::fmt::Display for ReceiptState {
@@ -54,7 +58,7 @@ pub enum ParseError {
     ReceiptState(String),
 }
 
-impl <'a> rocket::request::FromParam<'a> for ReceiptState {
+impl<'a> rocket::request::FromParam<'a> for ReceiptState {
     type Error = ParseError;
 
     fn from_param(param: &'a str) -> Result<Self, Self::Error> {

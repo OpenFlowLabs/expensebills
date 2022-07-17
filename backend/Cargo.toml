@@ -8,37 +8,37 @@ edition = "2021"
 [dependencies]
 anyhow = "1"
 thiserror = "1"
-uuid ={ version = "*", features = ["serde", "v4"]}
+uuid = { version = "*", features = ["serde", "v4"] }
 async-stream = { version = "^0.3" }
 async-trait = { version = "0.1" }
 futures = { version = "^0.3" }
 futures-util = { version = "^0.3" }
-rocket = {version="0.5.0-rc.2", features = ["json", "uuid"]}
-schemars = {version = "0.8", features = ["chrono"]}
+rocket = { version = "0.5.0-rc.2", features = ["json", "uuid"] }
+schemars = { version = "0.8", features = ["chrono"] }
 okapi = { version = "0.7.0-rc.1" }
 rocket_okapi = { version = "0.8.0-rc.2", features = ["swagger"] }
-log = {version = "*"}
-chrono = {version = "*", features = ["serde"]}
+log = { version = "*" }
+chrono = { version = "*", features = ["serde"] }
 sled = "0.34.4"
-sled-extensions = { version = "0.2.0", features = ["bincode"]}
+sled-extensions = { version = "0.2.0", features = ["bincode"] }
 sha256 = "1"
-entity = {path = "../entity"}
+entity = { path = "../entity" }
 
 [dependencies.sea-orm-rocket]
 git = "https://github.com/SeaQL/sea-orm"
 
 [dependencies.sea-orm]
-version = "^0.8.0"
+version = "0.9.0"
+features = ["runtime-tokio-native-tls", "sqlx-postgres", "uuid"]
+
+[dependencies.sea-orm-migration]
+version = "0.9.0"
 features = [
-  "runtime-tokio-native-tls",
-  "sqlx-postgres"
+  # Enable following runtime and db backend features if you want to run migration via CLI
+  # "runtime-tokio-native-tls",
+  # "sqlx-postgres",
 ]
 
 [dependencies.sqlx]
 version = "*"
-features = [
-    "runtime-tokio-native-tls", 
-    "postgres",
-    "chrono",
-    "json",
-]
+features = ["runtime-tokio-native-tls", "postgres", "chrono", "json"]
